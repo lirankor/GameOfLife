@@ -21,3 +21,11 @@ npm run build
 ```sh
 npm run lint
 ```
+## To do
+- [ ] Resolve bugs where life out of gring range
+- [ ] Add presets
+- [ ] Build presets component
+- [ ] Add save button an and allow to save presets to the local storage
+- [ ] Better style the app
+- [ ] Investigate more optimizations options
+- [ ] Move logic to helpers
