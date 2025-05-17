@@ -1,0 +1,33 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.grid-container {
+  overflow: hidden;
+  border: 1px solid #000;
+  margin: 20px auto;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -240px;
+  margin-top: -240px;
+}
+
+.cell {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  float: left;
+}
+
+.alive {
+  background-color: #000;
+}
+
+.cell:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1) inset;
+}
