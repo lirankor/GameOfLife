@@ -22,10 +22,10 @@ npm run build
 npm run lint
 ```
 ## To do
-- [ ] Resolve bugs where life out of gring range
+- [ ] Resolve bugs where life out of grid range
 - [ ] Add presets
 - [ ] Build presets component
-- [ ] Add save button an and allow to save presets to the local storage
+- [ ] Add save button + save presets local storage
 - [ ] Better style the app
 - [ ] Investigate more optimizations options
-- [ ] Move logic to helpers
+- [ ] Move some logic to an helper file
