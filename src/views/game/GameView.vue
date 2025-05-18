@@ -69,6 +69,15 @@ const handleCellClick = (cell: Cell) => {
 }
 
 const getNeighbors = (cell: Cell) => {
+  if (
+    cell.posistion.x == 0 ||
+    cell.posistion.y === 0 ||
+    cell.posistion.x == gridSize.value ||
+    cell.posistion.y == gridSize.value
+  ) {
+    grid.set(`${cell.posistion.x},${cell.posistion.y}`, { ...cell, isAlive: false })
+    return []
+  }
   const neighbors = <Cell[]>[
     grid.get(`${cell.posistion.x - 1},${cell.posistion.y - 1}`),
     grid.get(`${cell.posistion.x - 1},${cell.posistion.y}`),
@@ -99,16 +108,7 @@ const calculateNextGrid = () => {
   for (const cell of cellsToCheck) {
     const neighbors = getNeighbors(cell)
     const aliveNeighbors = neighbors.filter((neighbor) => neighbor?.isAlive).length
-    //eliminate cells that are outside the grid
-    if (
-      cell.posistion.x < 0 ||
-      cell.posistion.x >= computedGridSize.value ||
-      cell.posistion.y < 0 ||
-      cell.posistion.y >= computedGridSize.value
-    ) {
-      nextGrid.delete(`${cell.posistion.x},${cell.posistion.y}`)
-      continue
-    }
+
     if (cell.isAlive) {
       if (aliveNeighbors < 2 || aliveNeighbors > 3) {
         nextGrid.set(`${cell.posistion.x},${cell.posistion.y}`, { ...cell, isAlive: false })
